@@ -39,19 +39,25 @@ public class Main {
         Solution12 solution12 = new Solution12();
       //  solution12.searchBST(root2, 4);
 
-        int i = 5;
-        
-        Solution16 solution16 = new Solution16();
-        System.out.println(solution16.alternateDigitSum(i));
+       /*
+       InterviewQuestion interviewQuestion = new InterviewQuestion();
+       
+       int[] originalArray = {5, 8, 7, 1, 9, 3, 10, 12};
+       int[] newArray = interviewQuestion.filterArray(originalArray);
+       
+       for (int num : newArray) {
+           System.out.print(num + " ");
+       }
+       */
 
-        InterviewQuestion interviewQuestion = new InterviewQuestion();
+       int i = 14;
 
-        int[] originalArray = {5, 8, 7, 1, 9, 3, 10, 12};
-        int[] newArray = interviewQuestion.filterArray(originalArray);
-        
-        for (int num : newArray) {
-            System.out.print(num + " ");
-        }
+       Solution17 solution17 = new Solution17();
+       System.out.println(solution17.numberOfMatches(i));
+
+
+
+
 
 
        
