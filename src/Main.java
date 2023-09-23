@@ -37,23 +37,21 @@ public class Main {
        // TreeNode.printInOrder(root);
 
         Solution12 solution12 = new Solution12();
-        //solution12.searchBST(root2, 4);
+      //  solution12.searchBST(root2, 4);
 
-        int [] prices = {7,1,5,3,6,4};
+        int i = 5;
+        
+        Solution16 solution16 = new Solution16();
+        System.out.println(solution16.alternateDigitSum(i));
 
-        Solution13 solution13 = new Solution13();
+        InterviewQuestion interviewQuestion = new InterviewQuestion();
 
-       // System.out.println(solution13.maxProfit(prices));
-
-        Solution14 solution14 = new Solution14();
-
-        int [] students = {1,1,0,0};
-         int [] sandwiches = {0,1,0,1};
-
-     
-
-
-        System.out.println(solution14.countStudents(students, sandwiches));
+        int[] originalArray = {5, 8, 7, 1, 9, 3, 10, 12};
+        int[] newArray = interviewQuestion.filterArray(originalArray);
+        
+        for (int num : newArray) {
+            System.out.print(num + " ");
+        }
 
 
        

@@ -1,53 +1,37 @@
-import java.util.LinkedList;
-import java.util.Queue;
-public class Solution14 {
-   public int countStudents(int[] students, int[] sandwiches) {
-    Queue<Integer> studentsQueue = new LinkedList<Integer>();
-     Queue<Integer> sandwhichesQueue = new LinkedList<Integer>();
-     int temp;
-     int count = 0;
-     for(Integer i : students){
-        studentsQueue.add(i);
-     }
-     System.out.println(studentsQueue);
-      for(Integer j : sandwiches){
-        sandwhichesQueue.add(j);
-     }
-     System.out.println(sandwhichesQueue);
+class Solution14 {
+/**
+ * Counts the number of students who couldn't get their preferred sandwich.
+ *
+ * @param students    an array of integers representing the preferences of the students
+ * @param sandwiches  an array of integers representing the available sandwiches
+ * @return            the number of students who couldn't get their preferred sandwich
+ */
+public int countStudents(int[] students, int[] sandwiches) {
+    // Create an array to store the count of each student's preference
+    int[] count = new int[2];
 
-     if(studentsQueue.peek() == 1 && sandwhichesQueue.peek() ==1){
-        studentsQueue.poll();    
-        sandwhichesQueue.poll();
-        System.out.println(studentsQueue);
-        System.out.println(sandwhichesQueue);
-
-     }
-      if (studentsQueue.peek() == 1 && sandwhichesQueue.peek() ==0){
-         temp = studentsQueue.peek();
-        studentsQueue.poll();
-        studentsQueue.offer(temp);
-        System.out.println(studentsQueue);
-     }
-    if(studentsQueue.peek() == 0 && sandwhichesQueue.peek() ==0){
-        studentsQueue.poll();    
-        sandwhichesQueue.poll();
-        System.out.println(studentsQueue);
-        System.out.println(sandwhichesQueue);
-
-     }
-     if (studentsQueue.peek() == 0 && sandwhichesQueue.peek() ==1){
-         temp = studentsQueue.peek();
-        studentsQueue.poll();
-        studentsQueue.offer(temp);
-        System.out.println(studentsQueue);
-     }
-
-     
-
-
-
-        return 0;
-        
+    // Iterate through the students array
+    for (int i = 0; i < students.length; i++) {
+        // Increment the count of the student's preference
+        count[students[i]]++;
     }
-    
+
+    // Initialize a variable to keep track of the number of students who couldn't get their preferred sandwich
+    int studentsWithoutPreference = 0;
+
+    // Iterate through the sandwiches array
+    for (int i = 0; i < sandwiches.length; i++) {
+        // Check if the current sandwich preference is available
+        if (count[sandwiches[i]] > 0) {
+            // Decrement the count of the sandwich preference
+            count[sandwiches[i]]--;
+        } else {
+            // If the sandwich preference is not available, increment the studentsWithoutPreference count
+            studentsWithoutPreference++;
+        }
+    }
+
+    // Return the number of students who couldn't get their preferred sandwich
+    return studentsWithoutPreference;
+}
 }
