@@ -1,6 +1,9 @@
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 //This is the soulutions for the Leetcode Problems
@@ -136,21 +139,22 @@ public int minStartValue(int[] nums) {
 }
 
     public int[] getAverages(int[] nums, int k) {
-
+    int [] ans = new int[nums.length ];
     int[] prefixSum = new int[nums.length];
     prefixSum[0] = nums[0];
 
     for(int i = 1; i < nums.length; i++){
-        prefixSum[i] = prefixSum[i - 1] + nums[i]; 
+        prefixSum[i] = prefixSum[i - 1] + nums[i];
+    }
 
-        } 
-        /*
-        for(){
-        if (nums[i -1] < k){
-            nums[i] = -1;
+    for(int j = 0; j < nums.length; j++){
+        if(nums[j]< nums[k]){
+            System.out.println(nums[j]);
+
         }
-    } */
-        return nums;
+    }
+
+        return ans;
         
     }
 
@@ -180,11 +184,88 @@ public boolean checkIfPangram(String sentence) {
     return false;
 }
 
+public int missingNumber(int[] nums) {
+    int number = 0;
+    Arrays.sort (nums);
+    for (int i = 0; i < nums.length; i++) {
+        if(nums[i+1] - nums[i] != 1){
+            number = nums[i] + 1;
+            return number;
+        }
+       
+
+    }
+    return 0;
+        
+    }
 
 
+public int countElements(int[] arr) {
+    int count = 0; // Initialize count variable to 0
+    Set<Integer> set = new HashSet<>(); // Create a new HashSet to store unique elements
+
+    for (int x : arr) {
+        set.add(x); // Add each element from arr to the set
+    }
+
+    for (int x : arr) {
+        if (set.contains(x + 1)) { // Check if the set contains the next element
+            count++; // Increment count if the next element exists in the set
+        }
+    }
+
+    return count; // Return the count of elements
+}
 
 
+public List<List<Integer>> findWinners(int[][] matches) {
+    Map <Integer, Integer> winners = new HashMap<>();
+    //if element is in [0][0] then the player has not lost any matches, should be added to the winners map
+
+    for(int [] arr: matches ){
+        for(int x : arr){
+            matches[0][0] = 3;
+            winners.put(x, winners.getOrDefault(x, 0) + 1);
+        }
 
 
+        }
+
+
+    return null;
+        
+    }
+
+/**
+ * Finds the largest unique number in an array.
+ *
+ * @param  nums  the array of integers
+ * @return       the largest unique number, or -1 if there are no unique numbers
+ */
+public int largestUniqueNumber(int[] nums) {
+    // Map to store the count of each number in the array
+    Map<Integer, Integer> countMap = new HashMap<>();
+    
+    // Iterate through the array and update the count of each number in the map
+    for (int i = 0; i < nums.length; i++) {
+        int num = nums[i];
+        countMap.put(num, countMap.getOrDefault(num, 0) + 1);
+    }
+    
+    // Initialize the answer as -1
+    int largestUniqueNum = -1;
+    
+    // Iterate through the map entries
+    for (Map.Entry<Integer, Integer> entry : countMap.entrySet()) {
+        // Check if the count of the number is 1 (unique)
+        if (entry.getValue() == 1) {
+            int uniqueNum = entry.getKey();
+            largestUniqueNum = Math.max(largestUniqueNum, uniqueNum);
+        }
+    }
+    
+    // Return the largest unique number
+    return largestUniqueNum;
+}
     
 }

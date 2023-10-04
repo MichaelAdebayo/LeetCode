@@ -55,11 +55,31 @@ public class Main {
 
     
 
-       int []nums = {7,4,3,9,1,8,5,2,6};
+       int []nums = {5,7,3,9,4,9,8,3,1};
 
        Solution1a solution1a = new Solution1a();
+       System.out.println(solution1a.largestUniqueNumber(nums));
 
-       solution1a.getAverages(nums, 3);
+       char c [] = {'h', 'e', 'l', 'l', 'o'};
+
+       for(int i = 0; i < c.length; i++){
+        char x = c[i];
+        char y = c[c.length -i - 1];
+        char temp;
+
+        temp = x;
+        x = y;
+        y = temp;
+
+       // System.out.print(x);
+
+       }
+
+
+
+
+
+
 
 
      
