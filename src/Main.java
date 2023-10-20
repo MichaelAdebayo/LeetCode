@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -24,8 +25,6 @@ public class Main {
 
 
         TreeNode root2 = new TreeNode(4,leftChild,rightChild);
-
-       
 
 
         // Build the tree structure
@@ -58,7 +57,6 @@ public class Main {
        int []nums = {5,7,3,9,4,9,8,3,1};
 
        Solution1a solution1a = new Solution1a();
-       System.out.println(solution1a.largestUniqueNumber(nums));
 
        char c [] = {'h', 'e', 'l', 'l', 'o'};
 
@@ -71,39 +69,24 @@ public class Main {
         x = y;
         y = temp;
 
-       // System.out.print(x);
 
        }
+       String sentence = "Let's go to the mall";
+       StringBuilder string = new StringBuilder();
+       int left = 0;
+       int right = 0;
+       int count = 0;
+
+       for(char h: sentence.toCharArray()){
+           string.append(h);
+       }
+       //System.out.println(string);
+       string.toString();
 
 
-
-
-
-
-
-
-     
-
-       
-
+       int test[] = {3,0,1} ;
+       System.out.println(solution1a.missingNumber(test));
       
-
-       
-
-
-
-
-
-
-   
-       
-      
-
-
-       
-
-
-
     }
   
 
